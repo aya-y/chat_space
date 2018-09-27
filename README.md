@@ -5,14 +5,14 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group-name|string|null: false, unique: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
+
 
 ### Association
-- belongs_to :group
+- has_many :group_user
 - has_many :message
 
-## group-user table
+## group_user table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -26,9 +26,8 @@
 ## users table
 |Column|Type|Options|
 |------|----|-------|
-|group-user_id|integer|null: false, foreign_key: true|
 |email|string|null: false, unique: true|
-|name|string|null: false, unique: true|
+|name|string|null: false, unique: true, add_index|
 
 ### Association
 - belongs_to :group
@@ -40,6 +39,7 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |body|text|
+|image|text|
 
 
 ### Association
