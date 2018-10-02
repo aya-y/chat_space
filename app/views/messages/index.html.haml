@@ -4,8 +4,8 @@
   .side_content
     .user
       %p.user_name seo
-      %i.fas.fa-cog
-      %i.fas.fa-edit
+      =fa_icon "cog", class: "icon"
+      =fa_icon "edit", class: "icon"
     %ul.group_list
       %li.group
         .group__group_name aaaaaaa
@@ -22,7 +22,7 @@
 
   .main_content
     .header_main
-      %a{href: '#', class:'edit'}Edit
+      = link_to 'Edit', '#', class: 'edit'
       .main
       %h3.group_name サンプル
       %p.member_name Member : seo
@@ -52,4 +52,4 @@
       .message
         .message_inside Type a message
         %i.fas.fa-images
-      %a{href: '#', class:'send'} SEND
+      = link_to 'SEND', '#', class: 'send'
