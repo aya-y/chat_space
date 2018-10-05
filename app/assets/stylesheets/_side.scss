@@ -9,34 +9,54 @@
       padding-top: 30px;
       color: #FFFFFF;
       }
-      .icon{
-        float:right;
-        color: #FFFFFF;
-        padding-right: 20px;
-        padding-top: 5px;
-        text-decoration:none;
-      }
-       .user_name {
-        display: inline-block;
-        height: calc(100% - 30px);
-        width: auto;
-        font-weight: bold;
-        font-size: 16px;
-        padding-left: 20px;
-      }
+      .user_name {
+          display: inline-block;
+          float:left;
+          font-weight: bold;
+          font-size: 16px;
+          padding-left: 20px;
+        }
+        .icon{
+          float:right;
+          color: #FFFFFF;
+          padding-right: 20px;
+          padding-top: 5px;
+          text-decoration:none;
+        }
+
      .group_list {
        height: calc(100% - 60px);
        background-color: #2f3e51;
       .group{
-          color: #FFFFFF;
           padding: 20px;
-        &__group_name{
+        &__name{
           padding-bottom: 5px;
           font-size: 15px;
+          color: #FFFFFF;
           }
-        &__group_message{
+        &__message{
           font-size: 10px;
+          color: #FFFFFF;
           }
       }
     }
   }
+
+@mixin btn{
+  float:right;
+  color: #38AEF0;
+  text-decoration:none;
+  display:block;
+  text-align:center;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.contents{
+  height: 100%;
+  width: 100%;
+}
+
