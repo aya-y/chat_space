@@ -3,15 +3,16 @@
     = link_to 'Edit', '#', class: 'edit'
     .main
     %h3.group_name サンプル
-    %p.member_name Member : seo
+    -# = group.name
+    %p.member_name Member : #{current_user.name}
   .messages
-    = render @messages
+    = render partial: 'message', collection: @messages
 
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__mask
-        =f.label :image, class: 'form__mask__image' do
+        = f.label :image, class: 'form__mask__image' do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form_submit'
