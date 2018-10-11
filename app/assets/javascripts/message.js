@@ -45,7 +45,6 @@ $(document).on('turbolinks:load', function(){
       $('.form__message').val('')
       $(".messages").animate({scrollTop: $('.messages')[0].scrollHeight});
       $(".form_submit").prop( 'disabled', false );
-      $(".messages image" ).css("width", "200px")
     })
     .fail(function(){
       alert('error');
