@@ -68,11 +68,9 @@ $(function(){
      .done(function(messages){
       var id = $('.message').data('messageId')
       messages.forEach(function(message) {
-        if (message.id > id ) {
           var insertHTML = "";
           insertHTML += buildHTML(message);
           $('.message').append(insertHTML);
-        }
       });
 
       })
