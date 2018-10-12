@@ -3,9 +3,9 @@
     = link_to 'Edit', '#', class: 'edit'
     .main
     %h3.group_name サンプル
-    -# = group.name
+    -# = current_user.group.name
     %p.member_name Member : #{current_user.name}
-  .messages
+  .messages#message_id
     = render partial: 'message', collection: @messages
 
   .form
