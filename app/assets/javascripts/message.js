@@ -1,5 +1,4 @@
 $(function(){
-  console.log("It works on each visit!");
   function buildHTML(message){
     var image = '';
     if (message.image.url){
@@ -23,11 +22,6 @@ $(function(){
                     </div>
                   </div>
                 </div>`
-    console.log(message.user_name);
-    console.log(message.created_at);
-    console.log(message.content);
-    console.log(image);
-    console.log(message.id);
     return html;
   }
 
@@ -66,33 +60,27 @@ $(function(){
 
      function update(){
       if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      console.log('ok1');
     $.ajax({
       url: location.href,
       type: 'GET',
       dataType: 'json',
      })
      .done(function(messages){
-      console.log('ok2');
       var id = $('.message').data('messageId')
       messages.forEach(function(message) {
         if (message.id > id ) {
           var insertHTML = "";
-          console.log(message);
           insertHTML += buildHTML(message);
-          console.log('ok3');
           $('.message').append(insertHTML);
         }
       });
-      // $('.message').prepend(buildHTML);
 
       })
      .fail(function(){
-      // alert('自動更新に失敗しました');
+      alert('自動更新に失敗しました');
     })
  }   else{
       clearInterval(interval);
     }
   }
   });
-
