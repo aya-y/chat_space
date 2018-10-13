@@ -2,9 +2,9 @@ $(function(){
   function buildHTML(message){
     var image = '';
     if (message.image.url){
-      image = ` <img src = "message.image.url">`
+      image = ` <img src = "${message.image.url}">`
     }
-    var html = `<div class = "message" data-message-id= ${message.id}>
+    var html = `<div class = "message">
                   <div class = "upper-message">
                     <div class = "upper-message__user-name">
                       ${ message.user_name }
@@ -81,4 +81,4 @@ $(function(){
       clearInterval(interval);
     }
   }
-  });
+});
