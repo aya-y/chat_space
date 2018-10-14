@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(function() {
 var search_result= $("#user-search-result");
 
 function appendUser(user) {
@@ -33,6 +33,7 @@ function addGroup(user_name, user_id) {
       })
 
      .done(function(users) {
+      console.log(users);
       $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function(user){
