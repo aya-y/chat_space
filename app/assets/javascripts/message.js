@@ -1,10 +1,6 @@
 $(function(){
   function buildHTML(message){
     var image = message.image.url? `<img src = "${message.image.url}"}>` :""
-    // var image = '';
-    // if (message.image.url){
-    //   image = ` <img src = "${message.image.url}">`
-    // }
     var html = `<div class = "message">
                   <div class = "upper-message">
                     <div class = "upper-message__user-name">
