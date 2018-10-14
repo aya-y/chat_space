@@ -27,6 +27,7 @@
      .group_list {
        height: calc(100% - 60px);
        background-color: #2f3e51;
+       overflow: scroll;
       .group{
           padding: 20px;
         &__name{
