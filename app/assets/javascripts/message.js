@@ -1,9 +1,10 @@
 $(function(){
   function buildHTML(message){
-    var image = '';
-    if (message.image.url){
-      image = ` <img src = "${message.image.url}">`
-    }
+    var image = message.image.url? `<img src = "${message.image.url}"}>` :""
+    // var image = '';
+    // if (message.image.url){
+    //   image = ` <img src = "${message.image.url}">`
+    // }
     var html = `<div class = "message">
                   <div class = "upper-message">
                     <div class = "upper-message__user-name">
@@ -58,13 +59,14 @@ $(function(){
     //10000ミリ秒ごとにupdateという関数を実行する
   });
 
-     function update(){
-      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+  function update(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     $.ajax({
       url: location.href,
       type: 'GET',
       dataType: 'json',
      })
+
      .done(function(messages){
       var id = $('.message').data('messageId')
       messages.forEach(function(message) {
@@ -72,8 +74,7 @@ $(function(){
           insertHTML += buildHTML(message);
           $('.message').append(insertHTML);
       });
-
-      })
+    })
      .fail(function(){
       alert('自動更新に失敗しました');
     })
