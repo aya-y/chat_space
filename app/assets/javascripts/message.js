@@ -52,7 +52,6 @@ $(function(){
 
   $(function(){
     setInterval(update, 5000);
-    //10000ミリ秒ごとにupdateという関数を実行する
   });
 
   function update(){
